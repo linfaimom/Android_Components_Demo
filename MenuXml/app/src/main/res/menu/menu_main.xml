@@ -1,0 +1,51 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:title="@string/font_size">
+        <menu>
+            <!-- 定义一组单选菜单项 -->
+            <group android:checkableBehavior="single">
+                <!-- 定义多个子菜单 -->
+                <item
+                    android:id="@+id/font_10"
+                    android:title="@string/font_10"/>
+                <item
+                    android:id="@+id/font_12"
+                    android:title="@string/font_12"/>
+                <item
+                    android:id="@+id/font_14"
+                    android:title="@string/font_14"/>
+                <item
+                    android:id="@+id/font_16"
+                    android:title="@string/font_16"/>
+                <item
+                    android:id="@+id/font_18"
+                    android:title="@string/font_18"/>
+            </group>
+        </menu>
+    </item>
+
+    <!-- 定义一个普通菜单项 -->
+    <item
+        android:id="@+id/fuck"
+        android:title="@string/fuck">
+    </item>
+
+    <item android:title="@string/font_color">
+        <menu>
+            <!-- 定义一组普通菜单项 -->
+            <group>
+                <!-- 定义多个子菜单 -->
+                <item
+                    android:id="@+id/color_red"
+                    android:title="@string/color_red"/>
+                <item
+                    android:id="@+id/color_green"
+                    android:title="@string/color_green"/>
+                <item
+                    android:id="@+id/color_blue"
+                    android:title="@string/color_blue"/>
+            </group>
+        </menu>
+    </item>
+</menu>

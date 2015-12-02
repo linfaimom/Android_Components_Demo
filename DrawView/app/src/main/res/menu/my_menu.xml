@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="改变画笔颜色">
+        <menu>
+            <group>
+                <item android:title="红色" android:id="@+id/red"/>
+                <item android:title="蓝色" android:id="@+id/blue"/>
+                <item android:title="绿色" android:id="@+id/green"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="改变画笔宽度">
+        <menu>
+            <group>
+                <item android:id="@+id/width_12" android:title="12号字体"/>
+                <item android:id="@+id/width_14" android:title="14号字体"/>
+                <item android:id="@+id/width_16" android:title="16号字体"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>
