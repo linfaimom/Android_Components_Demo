@@ -21,13 +21,14 @@ public class MainActivity extends AppCompatActivity {
     Button write,search;
     EditText words,explain,searchWords;
     ListView list;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MyOpenHelper myOpenHelper = new MyOpenHelper(this,"myDict.db3",null,1);
-        final SQLiteDatabase db = myOpenHelper.getReadableDatabase();
+        db = myOpenHelper.getReadableDatabase();
         write = (Button)findViewById(R.id.write);
         write.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,4 +73,10 @@ public class MainActivity extends AppCompatActivity {
         list.setAdapter(adapter);
     }
 
+    public void onDestroy(){
+        super.onDestroy();
+        if (db!=null && db.isOpen()){
+            db.close();
+        }
+    }
 }
