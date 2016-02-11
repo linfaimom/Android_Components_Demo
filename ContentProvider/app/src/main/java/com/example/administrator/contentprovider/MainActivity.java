@@ -1,5 +1,6 @@
 package com.example.administrator.contentprovider;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ExpandableListActivity;
 import android.content.ContentProvider;
@@ -23,7 +24,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private Button searcher;
 
     @Override
@@ -48,23 +49,23 @@ public class MainActivity extends AppCompatActivity {
                     names.add(name);
 
                     //使用ContentResolver来获取该联系人的电话号码,基于上面的搜索结果
-                    Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID+contactId, null, null);
+                    Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID+" = "+contactId, null, null);
 
                     //创建一个List用于存放该联系人的号码及邮箱
                     final ArrayList<String> detail = new ArrayList<String>();
 
                     //遍历以上查找的数据，获取该的联系人的(多个)电话号码
                     while (phones.moveToNext()) {
-                        String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                        String number = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                         detail.add("Phone number:"+number);
                     }
                     phones.close();
 
                     //使用ContentResolver来获取该联系人的邮箱
-                    Cursor emails = getContentResolver().query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, null, ContactsContract.CommonDataKinds.Email.CONTACT_ID+contactId, null, null);
+                    Cursor emails = getContentResolver().query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, null, ContactsContract.CommonDataKinds.Email.CONTACT_ID+" = "+contactId, null, null);
                     //遍历以上查找的数据，获取该联系人的（多个）邮箱
                     while (emails.moveToNext()) {
-                        String emailAddress = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
+                        String emailAddress = emails.getString(emails.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
                         detail.add("E-mail:"+emailAddress);
                     }
                     emails.close();
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //加载result.xml布局文件
                 View resultDialog = getLayoutInflater().inflate(R.layout.result,null);
-                ExpandableListView list = (ExpandableListView)findViewById(R.id.list);
+                ExpandableListView list = (ExpandableListView)resultDialog.findViewById(R.id.list);
                 //创建一个ExpandableListAdapter
                 ExpandableListAdapter adapter = new BaseExpandableListAdapter() {
                     @Override
