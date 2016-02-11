@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 
     private Button bind,unbind,status;
 
+    //用于保存获取到的service实例
     private BindService.MyBinder binder;
 
     private ServiceConnection connection = new ServiceConnection() {
