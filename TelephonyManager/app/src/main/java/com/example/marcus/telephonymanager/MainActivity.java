@@ -1,7 +1,6 @@
 package com.example.marcus.telephonymanager;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.widget.ListView;
