@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
                 BaseAdapter adapter = new BaseAdapter() {
                     @Override
                     public int getCount() {
-                        return cursor.getCount();
+                        return (cursor == null) ? 0 : cursor.getCount();
                     }
 
                     @Override
