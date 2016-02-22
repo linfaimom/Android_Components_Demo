@@ -11,6 +11,10 @@
       <entry name="!?*.flex" />
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
+<<<<<<< HEAD
+=======
+      <entry name="!?*.aj" />
+>>>>>>> 2e7da1aba1605547fc0d8038ea7d4a65be529f6d
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
