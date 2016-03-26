@@ -104,11 +104,15 @@ public class MainActivity extends Activity {
                                 //先将phoneNumbers里面清空
                                 phoneNumbers.clear();
                                 //遍历list里面的各个条目,如果是打勾的就加到这个phoneNumbers列表里
-                                for (int i=0; i<list.getCount(); i++){
-                                    CheckBox check = (CheckBox)list.getChildAt(i);
-                                    if (check.isChecked()){
-                                        phoneNumbers.add(check.getText().toString());
+                                try {
+                                    for (int i=0; i<list.getCount(); i++){
+                                        CheckBox check = (CheckBox)list.getChildAt(i);
+                                        if (check.isChecked()){
+                                            phoneNumbers.add(check.getText().toString());
+                                        }
                                     }
+                                } catch (NullPointerException e) {
+                                    Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
                                 }
                                 //最终全部加到这个列表中,并在send里遍历各个号码,然后实现群发功能
                                 numbers.setText(phoneNumbers.toString());
