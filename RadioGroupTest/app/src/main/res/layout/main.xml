@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:layout_alignParentBottom="true"
+        android:id="@+id/radiogroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RadioButton
+            android:background="@null"
+            android:id="@+id/clothes"
+            android:drawableTop="@drawable/clothesb"
+            android:text="衣"
+            android:textAlignment="center"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:background="@null"
+            android:id="@+id/foods"
+            android:drawableTop="@drawable/foodsb"
+            android:text="食"
+            android:textAlignment="center"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:background="@null"
+            android:id="@+id/hotels"
+            android:drawableTop="@drawable/hotelsb"
+            android:text="住"
+            android:textAlignment="center"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:background="@null"
+            android:id="@+id/transports"
+            android:drawableTop="@drawable/transportb"
+            android:text="行"
+            android:textAlignment="center"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:background="@null"
+            android:id="@+id/me"
+            android:drawableTop="@drawable/meb"
+            android:text="我"
+            android:textAlignment="center"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/home"
+        android:layout_above="@id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+</RelativeLayout>

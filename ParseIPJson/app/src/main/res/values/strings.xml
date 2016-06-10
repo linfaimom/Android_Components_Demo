@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ParseIPJson</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter_ip">请输入 IP</string>
+    <string name="fetch">获取</string>
+    <string name="result">Result:</string>
+    <string name="warning">请输入合法的 IP 地址!</string>
+</resources>
